@@ -1,7 +1,6 @@
 <script src="phaser.js"></script>
 <script type="text/javascript">
-	import connect from '@vkontakte/vk-connect';
-	connect.send("VKWebAppInit", {});
+	
 
 	var game = new Phaser.Game(1080/4, 2160/4, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 	var textLevel;
