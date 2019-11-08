@@ -2,7 +2,7 @@
 <script type="text/javascript">
 	
 
-	var game = new Phaser.Game(270, 540, Phaser.AUTO, '', {preload: preload, create: create, update: update});
+	var game = new Phaser.Game(screen.width,screen.height, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 	var textLevel;
 	var text;
 	function preload() {
@@ -15,7 +15,7 @@
 	function create() {
 		//Скрываем курсор
 		//game.canvas.style.cursor = 'none';
-		game.add.tileSprite(0, 0, 270,540, 'background');
+		game.add.tileSprite(0, 0, screen.width,screen.height, 'background');
 
 
 	}
