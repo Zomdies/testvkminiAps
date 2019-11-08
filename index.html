@@ -1,25 +1,57 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | GameHack</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/2.json", {onProgress: UnityProgress});
-    </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 1080px; height: 2160px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">GameHack</div>
-      </div>
-    </div>
-  </body>
-</html>
+<script src="phaser.js"></script>
+<script type="text/javascript">
+	
+
+	var game = new Phaser.Game(1080/4, 2160/4, Phaser.AUTO, '', {preload: preload, create: create, update: update});
+	var textLevel;
+	var text;
+	function preload() {
+
+		game.load.image('button', 'assets/bet.png');
+		game.load.image('background', 'assets/starfield.jpg');
+		game.load.text('dic','dic.txt');
+	}
+
+
+	function create() {
+		//Скрываем курсор
+		//game.canvas.style.cursor = 'none';
+		game.add.tileSprite(0, 0, 1080/4,2160/4, 'background');
+		
+		textLevel = game.add.text(0, 0, 'Level: ' + level, {fill: '#efefef'})
+		text = game.add.text(game.world.centerX, game.world.centerY, '', {fill: '#efefef'})
+		text.anchor.setTo(0.5, 0.5);
+
+		ball = game.add.sprite(game.world.centerX, game.world.centerY, 'ball');
+		ball.anchor.setTo(0.5, 0.5);
+		ball.body.collideWorldBounds = true;
+		ball.body.bounce.setTo(1, 1);
+
+	}
+
+	function particleBurst(x, y) {
+
+	}
+
+	function createBet(x, y) {
+
+	}
+
+	function update() {
+		game.width = screen.width;
+		game.height = screen.height;
+	}
+
+
+
+
+	function showText(txt, timeout) {
+		text.setText(txt);
+		setTimeout(function() {
+			text.setText('');
+		}, timeout);
+	}
+
+
+
+</script>
