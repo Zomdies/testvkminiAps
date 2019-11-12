@@ -1,40 +1,22 @@
-<script src="phaser.js"></script>
-<script type="text/javascript">
-	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Game</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+		<div class="MainWindow">
+			<p id="simple">Hello world</p>
+			<button class="bt" type="submit" onclick="bt_click()" >Отправить</button>
+		</div>
+		<script type="text/javascript">
+				function bt_click(){
+					document.getElementById("simple").innerHTML="Новый текст!";
+				}
+		</script>
+</body>
 
-	var game = new Phaser.Game(screen.width,screen.height, Phaser.AUTO, '', {preload: preload, create: create, update: update});
-	var textLevel;
-	var text;
-	function preload() {
-
-		game.load.image('button', 'assets/bet.png');
-		game.load.image('background', 'assets/starfield.jpg');
-	}
-
-
-	function create() {
-		//Скрываем курсор
-		//game.canvas.style.cursor = 'none';
-		game.add.tileSprite(0, 0, screen.width,screen.height, 'background');
-
-
-	}
-
-	function particleBurst(x, y) {
-
-	}
-
-	function createBet(x, y) {
-
-	}
-
-	function update() {
-		game.width = screen.width;
-		game.height = screen.height;
-	}
-
-
-
-
-
-</script>
+</html>
