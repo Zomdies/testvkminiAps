@@ -9,12 +9,45 @@
 </head>
 <body>
 		<div class="MainWindow">
-			<p id="simple">Hello world</p>
-			<button class="bt" type="submit" onclick="bt_click()" >Отправить</button>
+			<p class= "text_score" id="t_score">Score 0</p>
+			<div class="Word_ENG">
+				<p id="word_swap">Zdes Slovo</p>
+			</div>
+			<div class="BT">
+				<button class="bt1" id="bt1" type="submit" onclick="bt_click(1)" >1</button>
+				<button class="bt2" id="bt2" type="submit" onclick="bt_click(2)" >2</button>
+			</div>
+
 		</div>
 		<script type="text/javascript">
-				function bt_click(){
-					document.getElementById("simple").innerHTML="Новый текст!";
+				var head_word = "1";
+				var score = 0;
+				//var fs = require('./fs');
+				function bt_click(id){
+					var a;
+					switch (id) {
+						case 1:
+							a = document.getElementById("bt1").innerHTML;
+							break;
+						case 2:
+							a = document.getElementById("bt2").innerHTML;
+							break;
+						default:
+							a =0;
+					}
+					if (a == head_word) {
+						creat_word();
+					}
+				}
+				function creat_word(){
+					score += 1;
+				/*	var line;
+
+					fs.readFile('dic/test.txt', 'utf8', (err, data) => {
+  				  line = data.split('\n')[1];
+					});*/
+					//document.getElementById("word_swap").innerHTML = String(line);
+					document.getElementById("t_score").innerHTML = "Score " + String(score);
 				}
 		</script>
 </body>

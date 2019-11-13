@@ -17,7 +17,23 @@ body {
   padding: 100px 0.5% 100px 0.5%;
   text-align: center;
 }
-.bt {
+.text_score{
+  font-size: 20px;
+  text-align:inherit;
+}
+.Word_ENG{
+  padding: 50px 0.5% 100px 0.5%;
+  font-size: 25px;
+}
+.BT{
+  padding: 150px 0.5% 150px 0.5%;
+}
+.bt1 {
+
+  width: 100px;
+  height: 100px;
+}
+.bt2 {
   width: 100px;
   height: 100px;
 }

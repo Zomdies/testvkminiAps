@@ -1,0 +1,11 @@
+Hello;Привет
+Sorry;Извини
+Please;Пожалуйста
+Welcome;Добро пожаловать
+People;Люди
+Boy;Мальчик
+Girl;Девочка
+Man;Мужчина
+Friend;Друг
+Boss;Босс
+Father;Отец
